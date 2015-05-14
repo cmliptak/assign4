@@ -35,27 +35,29 @@ NSString * phone;
     // Dispose of any resources that can be recreated.
 }
 
-//Tell keyboard to go away; stop first responder status when Done is pressed; name field only
+//***********************************************************************************
+//  -Tell keyboard to go away; stop first responder status when Done is pressed; name field only
+//***********************************************************************************
+
 - (IBAction)textFieldDoneEditing:(id)sender {
     
     //auto-enable Return key checkbox is checked, so Done key is disabled until user types
     [sender resignFirstResponder];
 
     
-}
+}//end actionhandler
 
-/************************************************************
--Change the underlying class of View to UIControl, this allows the call of action methods to View
-
--Tell fields to stop first responder status
-************************************************************/
+//***********************************************************************************
+//  -Change the underlying class of View to UIControl, this allows the call of action methods to    View
+//
+//  -Tell fields to stop first responder status
+//***********************************************************************************
 
 - (IBAction)backgroundTap:(id)sender {
     
     phone = _pText.text;
     
     // validate the name and phone fields
-
     [self valPhone:phone];
 
     if (flag1) {
@@ -64,9 +66,13 @@ NSString * phone;
         _pError.text = @""; //set label to empty
     }
     
-}
+}//end background
 
-//validate if a number is entered
+
+//*************************************************************************************
+//  Validate if a number is entered
+//*************************************************************************************
+
 -(BOOL)valPhone:(NSString*)phone{
 
     len = [phone length];
@@ -83,5 +89,17 @@ NSString * phone;
     }
     return flag1;
 
+}//end valPhone
+
+#define MAX_LENGTH 20
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField.text.length >= MAX_LENGTH && range.length == 0)
+    {
+    	return NO; // return NO to not change text
+    }
+    else
+    {return YES;}
 }
 @end
