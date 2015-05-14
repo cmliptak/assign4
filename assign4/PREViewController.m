@@ -18,11 +18,6 @@
 
 @implementation PREViewController
 
-//variables
-bool flag1;
-int num, len;
-NSString * phone;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -55,12 +50,12 @@ NSString * phone;
 
 - (IBAction)backgroundTap:(id)sender {
     
-    phone = _pText.text;
+    NSString * phone = _pText.text;
     
     // validate the name and phone fields
-    [self valPhone:phone];
 
-    if (flag1) {
+    if ([self valPhone:phone]) 
+	{
         [self.nText resignFirstResponder];
         [self.pText resignFirstResponder];
         _pError.text = @""; //set label to empty
@@ -74,21 +69,31 @@ NSString * phone;
 //*************************************************************************************
 
 -(BOOL)valPhone:(NSString*)phone{
-
-    len = [phone length];
-    num = [phone intValue]; //if phone is not a proper integer it num = 0
-    
-    //check if the number is proper length (10)
-    if (len > 10 || len < 10 || num == 0) {
-
-        _pError.text = @"!Valid Number\nDon't use ""-"" or ""( )""" ;//set error label
-        flag1 = false;
-    }
-    else{
-        flag1 = true;
-    }
-    return flag1;
-
+	NSError *error = NULL; 
+	
+	NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypePhoneNumber error:&error]; 
+	NSRange inputRange = NSMakeRange(0, [phone length]); 
+	NSArray *matches = [detector matchesInString:phone options:0 range:inputRange]; 
+	
+	// no match at all 
+	if ([matches count] == 0) 
+	{ 
+		return false; 
+	} 
+	
+	// found match but we need to check if it matched the whole string
+	NSTextCheckingResult *result = (NSTextCheckingResult *)[matches objectAtIndex:0]; 
+	
+	if ([result resultType] == NSTextCheckingTypePhoneNumber 
+		&& result.range.location == inputRange.location 
+		&& result.range.length == inputRange.length) 
+	{ // it matched the whole string 
+		return true; 
+		
+	} else { // it only matched partial string 
+		_pError.text = @"Please use a valid number format."; //set error label
+		return false; 
+	}
 }//end valPhone
 
 #define MAX_LENGTH 20
