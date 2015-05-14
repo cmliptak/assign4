@@ -43,7 +43,7 @@
 }//end actionhandler
 
 //***********************************************************************************
-//  -Change the underlying class of View to UIControl, this allows the call of action methods to    View
+//  -Change the underlying class of View to UIControl, this allows the call of action methods to View
 //
 //  -Tell fields to stop first responder status
 //***********************************************************************************
@@ -75,9 +75,11 @@
 	NSRange inputRange = NSMakeRange(0, [phone length]); 
 	NSArray *matches = [detector matchesInString:phone options:0 range:inputRange]; 
 	
+    int len = [phone length];
 	// no match at all 
-	if ([matches count] == 0) 
-	{ 
+	if ([matches count] == 0|| len < 10 || len > 10)
+	{
+        
 		_pError.text = @"Please use a valid number format."; //set error label
 		return false; 
 	} 
