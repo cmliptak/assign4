@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	 _pError.text = @"Don't use ""-"" or ""( )""" ;
+	 _pError.text = @"" ;
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +78,7 @@
 	// no match at all 
 	if ([matches count] == 0) 
 	{ 
+		_pError.text = @"Please use a valid number format."; //set error label
 		return false; 
 	} 
 	
@@ -90,9 +91,9 @@
 	{ // it matched the whole string 
 		return true; 
 		
-	} else { // it only matched partial string 
+	} else {
 		_pError.text = @"Please use a valid number format."; //set error label
-		return false; 
+		return false;
 	}
 }//end valPhone
 
