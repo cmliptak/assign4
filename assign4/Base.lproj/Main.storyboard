@@ -28,7 +28,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WkB-Qz-01D">
-                                <rect key="frame" x="45" y="101" width="141" height="30"/>
+                                <rect key="frame" x="45" y="87" width="141" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="qyu-Mu-v1V">
-                                <rect key="frame" x="45" y="139" width="230" height="37"/>
+                                <rect key="frame" x="45" y="125" width="230" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.07060657998" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,15 +72,14 @@
                                 <rect key="frame" x="35" y="387" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="Switched:" destination="vXZ-lx-hvc" eventType="valueChanged" id="VLl-x9-Jkh"/>
-                                    <action selector="switched:" destination="vXZ-lx-hvc" eventType="valueChanged" id="v2j-O4-NdQ"/>
+                                    <action selector="switched:" destination="vXZ-lx-hvc" eventType="valueChanged" id="wYg-cr-DfT"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-ei-RSO">
                                 <rect key="frame" x="237" y="387" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="switched:" destination="vXZ-lx-hvc" eventType="valueChanged" id="04c-VE-8Kl"/>
+                                    <action selector="switched:" destination="vXZ-lx-hvc" eventType="valueChanged" id="0GQ-9X-Koi"/>
                                 </connections>
                             </switch>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGo-5S-QNB">
@@ -131,8 +130,8 @@
                         <outlet property="pError" destination="qyu-Mu-v1V" id="mGy-gl-jjl"/>
                         <outlet property="pText" destination="WkB-Qz-01D" id="KBZ-Xt-YRf"/>
                         <outlet property="redS" destination="zyQ-cN-sPh" id="DzW-z3-DRi"/>
-                        <outlet property="s1" destination="9Hj-Co-iGv" id="yfs-91-SnU"/>
-                        <outlet property="s2" destination="ejh-ei-RSO" id="wkc-29-z4q"/>
+                        <outlet property="s1" destination="9Hj-Co-iGv" id="qQB-EK-jC7"/>
+                        <outlet property="s2" destination="ejh-ei-RSO" id="k98-cM-gP1"/>
                         <outlet property="sLabel" destination="cJw-yD-NOU" id="qUi-m1-8yO"/>
                     </connections>
                 </viewController>

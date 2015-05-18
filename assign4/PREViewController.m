@@ -28,11 +28,13 @@
 @end
 
 @implementation PREViewController
+//variables
+int red, green, blue;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	 _pError.text = @"" ;
+	 _pError.text = @"hello" ;
     self.sLabel.text = @"50";
 }
 
@@ -111,7 +113,7 @@
 	}
 }//end valPhone
 
-#define MAX_LENGTH 20
+/*#define MAX_LENGTH 20
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -121,14 +123,14 @@
     }
     else
     {return YES;}
-}
+}*/
 //***********************************************************************
 //Slider action
 //***********************************************************************
 
 - (IBAction)slider:(UISlider *)sender {
     int progress = lroundf(sender.value);
-    int red, blue, green;
+
     
         if (sender == _redS) {
             self.sLabel.text = [NSString stringWithFormat:@"%d", progress];
@@ -137,16 +139,18 @@
         else
             if(sender == _greenS){
                 self.greenL.text = [NSString stringWithFormat:@"%d", progress];
-                blue = _blueS.value;
+                green = _greenS.value;
+
             }
             else
-                if(sender == _blueS){
+                {
                     self.blueL.text = [NSString stringWithFormat:@"%d", progress];
-                    green = _greenS.value;
+                    blue = _blueS.value;
                 }
- 
     
-        [self.view setBackgroundColor: RGB(red, green, blue)];
+    UIColor *thisColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+    [self.view setBackgroundColor:(thisColor)];
+
 }
 
 //***********************************************************************
@@ -214,4 +218,5 @@ didDismissWithButtonIndex:(NSInteger)buttonIndex
         [alert show];
     }
 }
+
 @end
