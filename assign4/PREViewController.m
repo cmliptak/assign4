@@ -128,19 +128,25 @@
 
 - (IBAction)slider:(UISlider *)sender {
     int progress = lroundf(sender.value);
+    int red, blue, green;
+    
         if (sender == _redS) {
             self.sLabel.text = [NSString stringWithFormat:@"%d", progress];
+            red = _redS.value;
         }
         else
             if(sender == _greenS){
                 self.greenL.text = [NSString stringWithFormat:@"%d", progress];
+                blue = _blueS.value;
             }
             else
                 if(sender == _blueS){
                     self.blueL.text = [NSString stringWithFormat:@"%d", progress];
+                    green = _greenS.value;
                 }
-        
+ 
     
+        [self.view setBackgroundColor: RGB(red, green, blue)];
 }
 
 //***********************************************************************
