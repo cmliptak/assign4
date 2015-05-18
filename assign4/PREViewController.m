@@ -18,6 +18,12 @@
 @property (weak, nonatomic) IBOutlet UISwitch *s1;
 @property (weak, nonatomic) IBOutlet UISwitch *s2;
 @property (weak, nonatomic) IBOutlet UIButton *activate;
+@property (weak, nonatomic) IBOutlet UILabel *greenL;
+@property (weak, nonatomic) IBOutlet UILabel *blueL;
+@property (weak, nonatomic) IBOutlet UISlider *redS;
+@property (weak, nonatomic) IBOutlet UISlider *greenS;
+@property (weak, nonatomic) IBOutlet UISlider *blueS;
+
 
 @end
 
@@ -122,21 +128,19 @@
 
 - (IBAction)slider:(UISlider *)sender {
     int progress = lroundf(sender.value);
-    self.sLabel.text = [NSString stringWithFormat:@"%d", progress];
-/*
-        if (sender == _rSlider) {
+        if (sender == _redS) {
             self.sLabel.text = [NSString stringWithFormat:@"%d", progress];
         }
         else
-            if(sender == _gSlider){
-                self.gLabel.text = [NSString stringWithFormat:@"%d", progress];
+            if(sender == _greenS){
+                self.greenL.text = [NSString stringWithFormat:@"%d", progress];
             }
             else
-                if(sender == _bSlider){
-                    self.bLabel.text = [NSString stringWithFormat:@"%d", progress];
+                if(sender == _blueS){
+                    self.blueL.text = [NSString stringWithFormat:@"%d", progress];
                 }
         
-    */
+    
 }
 
 //***********************************************************************

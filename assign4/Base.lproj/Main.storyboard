@@ -91,14 +91,46 @@
                                     <action selector="clicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SvQ-N6-8wc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fP-Oh-cO6">
+                                <rect key="frame" x="45" y="222" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq8-yh-UmG">
+                                <rect key="frame" x="45" y="260" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="bkJ-LW-nVh">
+                                <rect key="frame" x="87" y="218" width="201" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="nFn-gl-Z2G"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="qEb-eh-EBY">
+                                <rect key="frame" x="87" y="256" width="201" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="gEV-s7-mXm"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="activate" destination="lGo-5S-QNB" id="vsT-k8-gft"/>
+                        <outlet property="blueL" destination="Zq8-yh-UmG" id="AbQ-dX-UWb"/>
+                        <outlet property="blueS" destination="qEb-eh-EBY" id="Yp1-O8-ST1"/>
+                        <outlet property="greenL" destination="9fP-Oh-cO6" id="a4Q-kc-Zk6"/>
+                        <outlet property="greenS" destination="bkJ-LW-nVh" id="z56-fM-rKZ"/>
                         <outlet property="nText" destination="RCZ-he-YkS" id="wgq-cH-iFQ"/>
                         <outlet property="pError" destination="qyu-Mu-v1V" id="mGy-gl-jjl"/>
                         <outlet property="pText" destination="WkB-Qz-01D" id="KBZ-Xt-YRf"/>
+                        <outlet property="redS" destination="zyQ-cN-sPh" id="DzW-z3-DRi"/>
                         <outlet property="s1" destination="9Hj-Co-iGv" id="yfs-91-SnU"/>
                         <outlet property="s2" destination="ejh-ei-RSO" id="wkc-29-z4q"/>
                         <outlet property="sLabel" destination="cJw-yD-NOU" id="qUi-m1-8yO"/>
