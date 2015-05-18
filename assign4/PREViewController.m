@@ -34,8 +34,8 @@ int red, green, blue;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	 _pError.text = @"hello" ;
-    self.sLabel.text = @"50";
+	 _pError.text = @"Enter a 10 digit number" ;
+
 }
 
 - (void)didReceiveMemoryWarning
