@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PREViewController : UIViewController
+@interface PREViewController : UIViewController <UIActionSheetDelegate>//uses this protocol to allow the controller class to act as Delegate
 
 - (IBAction)textFieldDoneEditing:(id)sender;
 @end

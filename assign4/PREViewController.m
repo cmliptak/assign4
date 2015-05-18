@@ -9,10 +9,15 @@
 #import "PREViewController.h"
 
 @interface PREViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *nText;
 @property (weak, nonatomic) IBOutlet UITextField *pText;
 @property (weak, nonatomic) IBOutlet UILabel *nError;
 @property (weak, nonatomic) IBOutlet UILabel *pError;
+@property (weak, nonatomic) IBOutlet UILabel *sLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *s1;
+@property (weak, nonatomic) IBOutlet UISwitch *s2;
+@property (weak, nonatomic) IBOutlet UIButton *activate;
 
 @end
 
@@ -22,6 +27,7 @@
 {
     [super viewDidLoad];
 	 _pError.text = @"" ;
+    self.sLabel.text = @"50";
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,5 +115,93 @@
     }
     else
     {return YES;}
+}
+//***********************************************************************
+//Slider action
+//***********************************************************************
+
+- (IBAction)slider:(UISlider *)sender {
+    int progress = lroundf(sender.value);
+    self.sLabel.text = [NSString stringWithFormat:@"%d", progress];
+/*
+        if (sender == _rSlider) {
+            self.sLabel.text = [NSString stringWithFormat:@"%d", progress];
+        }
+        else
+            if(sender == _gSlider){
+                self.gLabel.text = [NSString stringWithFormat:@"%d", progress];
+            }
+            else
+                if(sender == _bSlider){
+                    self.bLabel.text = [NSString stringWithFormat:@"%d", progress];
+                }
+        
+    */
+}
+
+//***********************************************************************
+//  Segment control; determine whether
+//  switches(index = 0) or button(index = 1)
+//***********************************************************************
+
+- (IBAction)toggleSeg:(UISegmentedControl *)sender {
+
+    if (sender.selectedSegmentIndex == 0) {
+        self.s1.hidden = NO;
+        self.s2.hidden = NO;
+        self.activate.hidden = YES;
+    }
+    else {
+        self.s1.hidden = YES;
+        self.s2.hidden = YES;
+        self.activate.hidden = NO;
+    }
+}
+//***********************************************************************
+//  Switches action; handles both switches; determines if they are on
+//***********************************************************************
+- (IBAction)switched:(UISwitch *)sender {
+    BOOL status = sender.isOn;
+
+    [self.s1 setOn:status animated:YES];
+    [self.s2 setOn:status animated:YES];
+
+}
+
+//***********************************************************************
+//Button action;
+//***********************************************************************
+- (IBAction)clicked:(UIButton *)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"Continue?"
+                                  delegate:self
+                                  cancelButtonTitle:@"Go Back!"
+                                  destructiveButtonTitle:@"Confirm!"
+                                  otherButtonTitles:nil];
+    [actionSheet showInView:self.view];
+}
+//***********************************************************************
+// action;
+//***********************************************************************
+- (void)actionSheet:(UIActionSheet *)actionSheet
+didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != [actionSheet cancelButtonIndex]) {
+        NSString *msg = nil;
+        if ([self.nText.text length] > 0) {
+            msg = [NSString stringWithFormat:
+                   @"You can breathe easy, %@, everything went OK.",
+                   self.nText.text];
+        } else {
+            msg = @"You can breathe easy, everything went OK.";
+        }
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Something was done"
+                              message:msg
+                              delegate:self
+                              cancelButtonTitle:@"Phew!"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 @end

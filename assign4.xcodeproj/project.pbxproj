@@ -21,6 +21,7 @@
 		D45EBA171B0404F5002731CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45EB9F91B0404F4002731CD /* UIKit.framework */; };
 		D45EBA1F1B0404F5002731CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D45EBA1D1B0404F5002731CD /* InfoPlist.strings */; };
 		D45EBA211B0404F5002731CD /* assign4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45EBA201B0404F5002731CD /* assign4Tests.m */; };
+		D46709FA1B09BCDD009C5F4F /* Click-Here-Blue.gif in Resources */ = {isa = PBXBuildFile; fileRef = D46709F91B09BCDD009C5F4F /* Click-Here-Blue.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,6 @@
 		D45EB9FD1B0404F4002731CD /* assign4-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "assign4-Info.plist"; sourceTree = "<group>"; };
 		D45EB9FF1B0404F4002731CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D45EBA011B0404F4002731CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D45EBA031B0404F4002731CD /* Homework4-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Homework4-Prefix.pch"; sourceTree = "<group>"; };
 		D45EBA041B0404F4002731CD /* PREAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PREAppDelegate.h; sourceTree = "<group>"; };
 		D45EBA051B0404F4002731CD /* PREAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PREAppDelegate.m; sourceTree = "<group>"; };
 		D45EBA081B0404F4002731CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +53,7 @@
 		D45EBA1C1B0404F5002731CD /* Homework4Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Homework4Tests-Info.plist"; sourceTree = "<group>"; };
 		D45EBA1E1B0404F5002731CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D45EBA201B0404F5002731CD /* assign4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = assign4Tests.m; sourceTree = "<group>"; };
+		D46709F91B09BCDD009C5F4F /* Click-Here-Blue.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Click-Here-Blue.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +127,10 @@
 		D45EB9FC1B0404F4002731CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D46709F91B09BCDD009C5F4F /* Click-Here-Blue.gif */,
 				D45EB9FD1B0404F4002731CD /* assign4-Info.plist */,
 				D45EB9FE1B0404F4002731CD /* InfoPlist.strings */,
 				D45EBA011B0404F4002731CD /* main.m */,
-				D45EBA031B0404F4002731CD /* Homework4-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -232,6 +233,7 @@
 				D45EBA0E1B0404F4002731CD /* Images.xcassets in Resources */,
 				D45EBA001B0404F4002731CD /* InfoPlist.strings in Resources */,
 				D45EBA091B0404F4002731CD /* Main.storyboard in Resources */,
+				D46709FA1B09BCDD009C5F4F /* Click-Here-Blue.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
