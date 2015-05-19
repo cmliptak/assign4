@@ -91,7 +91,7 @@ int red, green, blue;
 	
     int len = [phone length];
 	// no match at all 
-	if ([matches count] == 0|| len < 10 || len > 10)
+	if ([matches count] == 0|| len < 10 || len > 13)
 	{
         
 		_pError.text = @"Please use a valid number format."; //set error label
@@ -125,13 +125,13 @@ int red, green, blue;
     {return YES;}
 }*/
 //***********************************************************************
-//Slider action
+//Slider action;
 //***********************************************************************
 
 - (IBAction)slider:(UISlider *)sender {
     int progress = lroundf(sender.value);
-
     
+    //check which slider is active
         if (sender == _redS) {
             self.sLabel.text = [NSString stringWithFormat:@"%d", progress];
             red = _redS.value;
@@ -140,10 +140,8 @@ int red, green, blue;
             if(sender == _greenS){
                 self.greenL.text = [NSString stringWithFormat:@"%d", progress];
                 green = _greenS.value;
-
             }
-            else
-                {
+            else{
                     self.blueL.text = [NSString stringWithFormat:@"%d", progress];
                     blue = _blueS.value;
                 }
@@ -195,7 +193,7 @@ int red, green, blue;
     [actionSheet showInView:self.view];
 }
 //***********************************************************************
-// action;
+// action for pop-up dialog;
 //***********************************************************************
 - (void)actionSheet:(UIActionSheet *)actionSheet
 didDismissWithButtonIndex:(NSInteger)buttonIndex
