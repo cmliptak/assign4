@@ -113,17 +113,6 @@ int red, green, blue;
 	}
 }//end valPhone
 
-/*#define MAX_LENGTH 20
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    if (textField.text.length >= MAX_LENGTH && range.length == 0)
-    {
-    	return NO; // return NO to not change text
-    }
-    else
-    {return YES;}
-}*/
 //***********************************************************************
 //Slider action;
 //***********************************************************************
